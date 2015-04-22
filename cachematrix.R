@@ -2,7 +2,11 @@
 ## of the inverse of a matrix
 
 ## This function take a matrix and returns a special object
-## that caches the inverse of the matrix
+## that caches the inverse of the matrix. The returned object
+## contains methods that:
+##    change original matrix
+##    get the original matrix
+##    return the cached reverse matrix
 
 makeCacheMatrix <- function(x = matrix()) {
   inverseMatrix <- NULL
@@ -19,7 +23,9 @@ makeCacheMatrix <- function(x = matrix()) {
 }
 
 
-## This function returns the cached inverse of a mtarix
+## This function returns the cached inverse of a mtarix. The
+## first time the inverse is calculated and cached, for subsequent
+## call the cached value is returned.
 
 cacheSolve <- function(x, ...) {
   m <- x$getInverm()
